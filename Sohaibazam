@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohaib Azam Jatoi | Advocate & Legal Consultant</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1a2530; /* Deep Legal Navy */
+            --accent: #c5a059;  /* Classic Gold */
+            --bg-light: #f8f9fa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 37, 48, 0.9), rgba(26, 37, 48, 0.95)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 1rem;
+            padding-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+
+        .btn {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 0.75rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #b38f48;
+            color: #fff;
+        }
+
+        /* Sections General */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .about-details {
+            list-style: none;
+        }
+
+        .about-details li {
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .about-details i {
+            color: var(--accent);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        /* Practice Areas */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--bg-light);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--accent);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--bg-light);
+            max-width: 100%;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-right: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .contact-form .btn {
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #2d3748;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Simplified for template */
+            .about-grid, .contact-container { grid-template-columns: 1fr; gap: 2rem; }
+            .hero h1 { font-size: 2.2rem; }
+            section { padding: 4rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="logo">SOHAIB AZAM<span> JATOI</span></a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#practice">Practice Areas</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <h1>Sohaib Azam Jatoi</h1>
+        <p>Advocate & Legal Consultant providing comprehensive legal counsel, strategic litigation support, and contract advisory services.</p>
+        <a href="#contact" class="btn">Schedule a Consultation</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Professional Profile</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Welcome. I am a dedicated legal professional committed to delivering robust legal advocacy and clear, strategic consulting. My practice focuses on addressing complex legal disputes with diligence, precision, and an unwavering commitment to my clients' objectives.</p>
+                <p>Whether representation is required in civil litigation, drafting tight contractual frameworks, or securing expert legal advisement, my chamber ensures tailored solutions designed to protect your interests and mitigate risk effectively.</p>
+            </div>
+            <div>
+                <ul class="about-details">
+                    <li><i class="fa-solid fa-graduation-cap"></i> Degree: LL.B (Bachelor of Laws)</li>
+                    <li><i class="fa-solid fa-gavel"></i> Role: Advocate</li>
+                    <li><i class="fa-solid fa-briefcase"></i> Focus: Litigation & Contract Advisory</li>
+                    <li><i class="fa-solid fa-globe"></i> Services: Available for Local & Virtual Consulting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas Section -->
+    <section id="practice" style="background-color: var(--bg-light); max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Areas of Practice</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>Civil Litigation</h3>
+                    <p>Comprehensive legal representation, trial advocacy, and filing strategic suits in civil courts to protect your legal rights and property interests.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <h3>Contract & Legal Drafting</h3>
+                    <p>Expert drafting, meticulous vetting, and review of agreements, legal notices, and legal documentation tailored to prevent future disputes.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <h3>Virtual Consulting</h3>
+                    <p>Providing agile legal consultation, strategic cross-border legal assessments, and remote advisory services for global platforms and international clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="section-title" style="text-align: left; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Get In Touch</h2>
+                <p style="color: var(--text-light); margin-bottom: 2rem;">Reach out today to discuss your legal matters or to request freelance consulting support. All queries are treated with strict professional confidentiality.</p>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Chamber Location</strong>
+                        <p>District Courts, Faisalabad, Pakistan</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Email Address</strong>
+                        <p>contact@sohaibazamjatoi.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message / Case Overview</label>
+                        <textarea id="message" rows="5" required placeholder="Brief details regarding your legal query..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sohaib Azam Jatoi. All Rights Reserved. Professional Legal Services.</p>
+    </footer>
+
+</body>
+</html>
